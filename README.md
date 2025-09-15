@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/bwads001-cc-session-search-badge.png)](https://mseep.ai/app/bwads001-cc-session-search)
+
 # Claude Code Session Search MCP Server
 
 An MCP (Model Context Protocol) server that provides tools for searching and analyzing Claude Code conversation history.
