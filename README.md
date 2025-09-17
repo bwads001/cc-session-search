@@ -13,15 +13,15 @@ An MCP (Model Context Protocol) server that provides tools for searching and ana
 
 ## Installation
 
-1. Install dependencies:
-```bash
-uv pip install -e .
-```
-
-2. Clone this repository:
+1. Clone this repository:
 ```bash
 git clone https://github.com/bwads001/cc-session-search.git
 cd cc-session-search
+```
+
+2. Install dependencies:
+```bash
+uv pip install -e .
 ```
 
 3. Add to Claude Code MCP config (`~/.config/claude/mcp.json`):
