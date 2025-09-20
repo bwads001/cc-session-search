@@ -13,16 +13,9 @@ class SessionSearcher:
     """Core session search and analysis functionality"""
 
     def __init__(self):
-        # Import parser here to avoid circular imports
-        import sys
-        CONV_ANALYZER_PATH = Path.home() / 'Projects' / 'claude-conversation-analyzer' / 'src'
-        sys.path.append(str(CONV_ANALYZER_PATH))
-
-        try:
-            from parser import JSONLParser
-            self.parser = JSONLParser()
-        except ImportError:
-            raise ImportError("Could not import conversation parser")
+        # Use local conversation parser
+        from core.conversation_parser import JSONLParser
+        self.parser = JSONLParser()
 
         self.claude_dir = Path.home() / '.claude' / 'projects'
 

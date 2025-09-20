@@ -8,20 +8,20 @@ An MCP (Model Context Protocol) server that provides tools for searching and ana
 - **List Sessions**: Browse sessions for specific projects
 - **List Recent Sessions**: Find recent conversations across all projects
 - **Analyze Sessions**: Extract and analyze messages with role filtering
-- **Search Conversations**: Search for specific terms with context windows
+- **Search Conversations**: Search for specific terms with context windows and time ranges
 - **Get Message Details**: Retrieve full content for specific messages
+- **Summarize Conversations**: AI-powered summarization of daily conversations
 
 ## Installation
 
 1. Install dependencies:
 ```bash
-uv pip install -e .
+uv sync
 ```
 
-2. Clone this repository:
+2. Run the server:
 ```bash
-git clone https://github.com/bwads001/cc-session-search.git
-cd cc-session-search
+uv run python server.py
 ```
 
 3. Add to Claude Code MCP config (`~/.config/claude/mcp.json`):
@@ -29,13 +29,18 @@ cd cc-session-search
 {
   "servers": {
     "cc-session-search": {
-      "command": ["uv", "run", "cc-session-search"],
-      "cwd": "${HOME}/cc-session-search"
+      "command": ["uv", "run", "python", "server.py"],
+      "cwd": "/path/to/cc-session-search"
     }
   }
 }
 ```
-Note: Adjust the `cwd` path to match where you cloned the repository.
+
+## Requirements
+
+- Standard Claude Code installation (searches `~/.claude/projects/`)
+- Python 3.13+
+- MCP 1.2.0+
 
 ## Usage
 
